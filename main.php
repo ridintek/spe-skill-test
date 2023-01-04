@@ -4,10 +4,21 @@
  * Author: Riyan Widiyanto
  * Date: 2023-01-04 11:03:52
  */
+
 declare(strict_types=1);
 
 class SpeSkillTest
 {
+  /**
+   * Narcissistic
+   * 
+   * Angka diubah menjadi string dan dipecah menjadi array of char.
+   * Lalu array of char ($n) di power oleh ukuran ($len) sesuai
+   * panjang angka, lalu ditambahkan disetiap hasil.
+   * 
+   * Jika hasil penambahan ($sum) sama dengan angka awal ($num) maka,
+   * return TRUE.
+   */
   public static function narcissistic(int $num)
   {
     $data = str_split(strval($num));
@@ -21,6 +32,18 @@ class SpeSkillTest
     return ($sum == $num);
   }
 
+  /**
+   * parityOutlier
+   * 
+   * $data yang berupa array of int. Di loopkan dan dibuat sebuah
+   * pengecekan modulus (item % 2), jika hasil modulus 0 berarti genap,
+   * sebaliknya (hasil 1) ganjil. Yang ganjil di push ke array $ganjil,
+   * yang genap di push ke array $genap.
+   * 
+   * Jika jumlah count($genap) sama dengan 1, maka ambil index pertama genap.
+   * Jika ganjil, jika count($genap) == 0 maka FALSE, sebaliknya gambil $ganjil
+   * pada index pertama $ganjil[0]
+   */
   public static function parityOutlier(array $data)
   {
     $ganjil = [];
@@ -37,6 +60,13 @@ class SpeSkillTest
     return (count($genap) == 1 ? $genap[0] : (!count($genap) ? false : $ganjil[0]));
   }
 
+  /**
+   * findNeedle
+   * 
+   * Haystack berupa data array of int yang dibuat looping, di compare
+   * dengan $needle / key jika sama maka break (selesai). $count sebagai
+   * penghitung looping yang akan menjadi index.
+   */
   public static function findNeedle(array $haystack, string $needle)
   {
     $count = 0;
@@ -53,6 +83,14 @@ class SpeSkillTest
     return $count;
   }
 
+  /**
+   * blueOcean
+   * 
+   * $remove sebagai array of int dibuat looping, sementara terdapat
+   * forever looping sebagai pencarian value menggunakan array_search,
+   * jika ada value nya, maka array nya di unset berdasarkan $key, jika
+   * tidak ada break forever loop (while(1))
+   */
   public static function blueOcean(array $data, array $remove)
   {
     if (count($data) && count($remove)) {
