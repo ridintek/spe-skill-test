@@ -3,6 +3,10 @@
 /**
  * Author: Riyan Widiyanto
  * Date: 2023-01-04 11:03:52
+ * 2nd Interview: 2023-01-17 13:30:00
+ * Status: FAILED
+ * Reason: On last interview, my environment was too noisy and internet connection
+ *         was problem. And i late to use headset.
  */
 
 declare(strict_types=1);
